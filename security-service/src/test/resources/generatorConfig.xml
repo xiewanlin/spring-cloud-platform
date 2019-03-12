@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry
+            location="D:/Users/xiewanlin/.m2/repository/com/oracle/ojdbc6/11.2.0.3.0/ojdbc6-11.2.0.3.0.jar"/>
+    <context id="my" targetRuntime="MyBatis3">
+    <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+    <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+    <!-- <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" /> -->
+        <commentGenerator>
+            <property name="suppressDate" value="false"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/xwl"
+                        userId="root"
+                        password="root"/>
+
+        <javaModelGenerator targetPackage="com.xwl.capacity.model.entities"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.xwl.capacity.model.mapper"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.xwl.capacity.model.mapper"
+                             targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        
+        
+        <table tableName="T_DFQ_MERCHANT_CHECK" domainObjectName="DfqMerchantCheckEntity" mapperName="DfqMerchantCheckMapper"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+        </table>
+
+    </context>
+</generatorConfiguration>
